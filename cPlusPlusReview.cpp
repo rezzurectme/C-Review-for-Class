@@ -272,6 +272,27 @@ void decisionMaking(){
          cout << "x is NOT less than 5" << endl;
     }
 
+    // short hand if else (ternary) operator
+    // Format: condition ? expression1 : expression2;
+    // if the condition is true, expression1 is executed, otherwise expression2 is executed
+    int z = (x > y) ? x : y; // z is assigned the value of x if x is greater than y, otherwise z is assigned the value of y
+    cout << "The greater value between x and y is: " << z << endl;
+
+    // do not forget about operator precedence (order of operations) and short-circuit evaluation
+    // use parentheses to group conditions and make the code more readable
+    /*
+    int x = 10;
+    int y = 5;
+    */
+    if ((x > 5 && y < 10) || (x < 5 && y > 10)) // true
+    {
+         cout << "Complex condition is true" << endl;
+    }
+    if (x > 5 || (y++ > 10)) // true, y is not incremented because the first condition is true (short-circuit evaluation)
+    {
+         cout << "Short-circuit evaluation: y is " << y << endl; // y is still 5
+    }
+
 }
 
 void loops(){
