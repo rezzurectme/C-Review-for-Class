@@ -293,6 +293,51 @@ void decisionMaking(){
          cout << "Short-circuit evaluation: y is " << y << endl; // y is still 5
     }
 
+    // Switch case statement: used to select one of many blocks of code to be executed
+    // Format:
+    /*
+    switch(expression)
+    {
+        case value1:
+            // block of code to be executed if expression == value1
+            break;
+        case value2:
+            // block of code to be executed if expression == value2
+            break;
+        ...
+        default:
+            // block of code to be executed if expression does not match any case
+    }
+    */
+    // example:
+    int day = 3;
+    switch(day)
+    {
+        case 1:
+            cout << "Monday" << endl;
+            break; // break is used to exit the switch case, if not used, the next case will be executed (fall-through)
+        case 2:
+            cout << "Tuesday" << endl;
+            break;
+        case 3:
+            cout << "Wednesday" << endl;
+            break;
+        case 4:
+            cout << "Thursday" << endl;
+            break;
+        case 5:
+            cout << "Friday" << endl;
+            break;
+        case 6:
+            cout << "Saturday" << endl;
+            break;
+        case 7:
+            cout << "Sunday" << endl;
+            break;
+        default:
+            cout << "Invalid day" << endl; // this block of code will be executed if day is not between 1 and 7
+    }
+
 }
 
 void loops(){
@@ -341,4 +386,38 @@ void loops(){
         k++; // increment
     } while (k < 5); // condition
 
+}
+
+void makingEnums(){
+    // Enums: used to make a variable that can only have a set of predefined values
+    // used to make the code more readable and maintainable
+    // almost like a custom data type
+    // Format:
+    /*
+    enum EnumName {value1, value2, value3, ...};
+    */
+
+    // create an enum for colors
+    enum Colors {red, green, blue}; // notice the Capital C in Colors
+    Colors myColor = red; // create a variable of type Colors and assign it the value red
+    cout << "My color is: " << myColor << endl; // output is 0 (red is the first value in the enum, so it is assigned the value 0)
+    
+    // need a way to convert enum values to strings for better output
+    // can use switch case for this
+    switch (myColor)
+    {
+    case red:
+        cout << "My color is: red" << endl; // output is red
+        break;
+    case green:
+        cout << "My color is: green" << endl; // output is green
+        break;
+    case blue:
+        cout << "My color is: blue" << endl; // output is blue
+        break;
+    default:
+        cout << "Invalid color" << endl; // this block of code will be executed if myColor is not red, green, or blue
+        break;
+    }
+    
 }
