@@ -142,3 +142,182 @@ void inputAndOutput(){
     cout << "Hello, " << fullName << "!" << endl;
 
 }
+
+void decisionMaking(){
+    // decision making: if, else if, else statements
+    // using composed of a condition (boolean expression) and a block of code (curly braces {})
+    // Format of a simple if statement: 
+    /*
+    if(condition)
+    {
+        // block of code to be executed if the condition is true
+    }
+    */ 
+    // indentation does not matter, only curly braces matter
+    // condition must be a boolean expression (true or false)
+    // example:
+    int a;
+    a = 6;
+    if (a > 5) // condition is true
+    {
+        cout << "a is greater than 5" << endl; // this block of code will be executed
+    }
+
+    int b = 3;
+    if (b > 5) // condition is false
+    {
+        cout << "b is greater than 5" << endl; // this block of code will NOT be executed
+    }
+
+    // if statement do not need curly braces if there is only one line of code to be executed
+    if (b < 5) // condition is true
+        cout << "b is less than 5" << endl; // this block of code will be executed
+
+    // if else or if-elseif statements
+    /*
+    if(condition)
+    {
+        // block of code to be executed if the condition is true
+    }
+    else if(condition)
+    {
+        // block of code to be executed if the condition is true
+    }
+    else
+    {
+        // block of code to be executed if all conditions are false
+    }
+    */
+    // if the first condition is true, the block of code inside the if statement is executed
+    // if the first condition is false, the next condition is checked, and so on
+    // if all conditions are false, the block of code inside the else statement is executed
+
+    // Once 1 condition is true and the code block is executed, the rest of the conditions are skipped
+    // example:
+    int c =10;
+    if (c < 5) // condition is false
+    {
+        cout << "c is less than 5" << endl; // this block of code will NOT be executed
+    }
+    else
+    {
+        cout << "c is not less than 5" << endl; // this block of code will be executed
+    }
+
+    // you can also assign a variable in the condition
+    int d;
+    cout << "Enter a number: ";
+    cin >> d;
+    if (d = 5) // condition is true (assignment operator = is used instead of comparison operator ==), so d is assigned the value 5 inside the condition
+    {
+        cout << "d is 5" << endl; // this block of code will be executed
+    }
+    else
+    {
+        cout << "d is not 5" << endl; // this block of code will NOT be executed
+    }
+    // Warning: common mistake is using = instead of == in the condition
+    
+    // Comparison operators: ==, !=, >, <, >=, <=
+    // Logical operators: && (AND), || (OR), ! (NOT)
+    /*
+    == --> equal to
+    != --> not equal to
+    >  --> greater than
+    <  --> less than
+    >= --> greater than or equal to
+    <= --> less than or equal to
+    && --> AND operator, both conditions must be true
+    || --> OR operator, at least one condition must be true
+    !  --> NOT operator, negates the condition
+    */
+   // example of each:
+   int x = 10;
+   int y = 5;
+   
+    if (x == 10) // true
+    {
+         cout << "x is equal to 10" << endl;
+    }
+    if (y != 10) // true
+    {
+         cout << "y is not equal to 10" << endl;
+    }
+    if (x > 5) // true
+    {
+         cout << "x is greater than 5" << endl;
+    }
+    if (y < 10) // true
+    {
+         cout << "y is less than 10" << endl;
+    }
+    if (x >= 10) // true
+    {
+         cout << "x is greater than or equal to 10" << endl;
+    }
+    if (y <= 5) // true
+    {
+         cout << "y is less than or equal to 5" << endl;
+    }
+    if (x > 5 && y < 10) // true
+    {
+         cout << "x is greater than 5 AND y is less than 10" << endl;
+    }
+    if (x > 5 || y > 10) // true
+    {
+         cout << "x is greater than 5 OR y is greater than 10" << endl;
+    }
+    if (!(x < 5)) // true
+    {
+         cout << "x is NOT less than 5" << endl;
+    }
+
+}
+
+void loops(){
+    // loops: for, while, do-while loops
+    // used to repeat a block of code multiple times
+    // for loop: used when the number of iterations is known
+    /*
+    for(initialization; condition; increment/decrement)
+    {
+        // block of code to be executed
+    }
+    */
+    // example:
+    for (int i = 0; i < 5; i++) // initialization: int i = 0; condition: i < 5; increment: i++
+    {
+        cout << "i is: " << i << endl; // this block of code will be executed 5 times (i = 0, 1, 2, 3, 4)
+    }
+
+    // while loop: used when the number of iterations is not known
+    /*
+    while(condition)
+    {
+        // block of code to be executed
+    }
+    */
+    // example:
+    int j = 0; // initialization
+    while (j < 5) // condition
+    {
+        cout << "j is: " << j << endl; // this block of code will be executed 5 times (j = 0, 1, 2, 3, 4)
+        j++; // increment
+    }
+
+    // do-while loop: similar to while loop, but the block of code is executed at least once before checking the condition
+    /*
+    do
+    {
+        // block of code to be executed
+    } while(condition);
+    */
+    // example:
+    int k = 0; // initialization
+    do
+    {
+        cout << "k is: " << k << endl; // this block of code will be executed 5 times (k = 0, 1, 2, 3, 4)
+        k++; // increment
+    } while (k < 5); // condition
+
+}
