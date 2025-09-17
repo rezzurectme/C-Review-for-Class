@@ -1,6 +1,24 @@
 #include<string>
 #include<iostream>     // Header file to get the input output functions (like cin, cout)
+#include<fstream>      // Header file to get file handling functions (like ifstream, ofstream)
 using namespace std;    // This will save us from writing std:: before every cin, cout 
+
+// function prototypes: used to declare a function before it is defined
+// Format: ReturnType FunctionName(ParameterType1 parameter1, ParameterType2 parameter2, ...);
+// example:
+void variables(); // function to demonstrate variable declaration and initialization
+void operators(); // function to demonstrate operators
+void inputAndOutput(); // function to demonstrate input and output
+void decisionMaking(); // function to demonstrate decision making (if, else if, else, switch case)
+void loops(); // function to demonstrate loops (for, while, do-while)
+void makingEnums(); // function to demonstrate enums
+void fileHandling(); // function to demonstrate file handling (ifstream, ofstream)
+int add(int a, int b); // function that takes two int parameters and returns their sum
+void greet(string name); // function that takes a string parameter and returns nothing (void)
+
+// these prototypes are for functions that are defined after main function
+// avoiding "implicit declaration" errors
+
 
 int main() // main function - program will start execution from here
 {
@@ -32,6 +50,14 @@ int main() // main function - program will start execution from here
     //      should be meaningful and descriptive (like age, name, totalPrice, etc)
     //      should follow a consistent naming convention (like camelCase, snake_case, etc)
     //      should be easy to read and understand
+
+    // calling a function
+    variables(); // function to demonstrate variable declaration and initialization
+    int addResult = add(5, 3); // calling the add function and storing the result in a variable
+    cout << "The sum of 5 and 3 is: " << addResult << endl; // printing the result
+    greet("Reza"); // calling the greet function
+
+    return 0; // return 0 to indicate that the program ended successfully
 
 }
 
@@ -421,3 +447,87 @@ void makingEnums(){
     }
     
 }
+
+void fileHandling(){
+    // File Handling: using ifstream and ofstream
+    // ifstream is used to read from a file
+    // ofstream is used to write to a file
+
+    // create an ofstream object
+    ofstream outFile; // the "o" in ofstream stands for output
+    // open a file
+    outFile.open("example.txt"); // if the file does not exist, it will be created
+    // check if the file is open
+    if (outFile.is_open())
+    {
+        // write to the file
+        outFile << "Hello, World!" << endl; // write a line to the file (make sure to use endl or \n to end the line)
+        outFile << "This is a file handling example." << endl;
+        // close the file
+        outFile.close(); // always close the file when done
+    }
+    else
+    {
+        cout << "Unable to open file for writing." << endl;
+    }
+
+    // create an ifstream object
+    ifstream inFile; // the "i" in ifstream stands for input
+    // open a file
+    inFile.open("example.txt"); // open the file created above
+    // check if the file is open
+    if (inFile.is_open()) // said in lecture that if you put if(inFile) it also works, which checks if the file has been opened successfully
+    {
+        string line;
+        // read from the file line by line
+        while (getline(inFile, line)) // read a line from the file and store it in the variable line (gets the whole line including spaces)
+        {
+            cout << line << endl; // print the line to the console
+        }
+        // close the file
+        inFile.close();
+    }
+    else
+    {
+        cout << "Unable to open file for reading." << endl;
+    }
+}
+
+// Functions: used to group a set of statements together to perform a specific task
+// Format:
+/*
+ReturnType FunctionName(ParameterType1 parameter1, ParameterType2 parameter2, ...)
+{
+    // block of code to be executed
+    return returnValue; // if the return type is not void
+}
+*/
+
+// parameters are optional, a function can have no parameters
+// parameters are used to pass values to the function
+
+// return type can be void if the function does not return a value
+// return type can be any data type (int, float, char, string, bool, etc)
+// return type can also be a custom data type (like enum, struct, class, etc)
+
+// "int" is the return type, "add" is the function name, "int a" and "int b" are the parameters
+int add(int a, int b) // function that takes two int parameters and returns their sum
+{
+    return a + b; // return the sum of a and b
+}
+
+void greet(string name) // function that takes a string parameter and returns nothing (void)
+{
+    cout << "Hello, " << name << "!" << endl; // print a greeting message
+}
+// to call a function, use the function name followed by parentheses and arguments (if any)
+// example:
+// int result = add(5, 3); // calls the add function with arguments 5 and 3, and stores the return value in the variable result
+// greet("Reza"); // calls the greet function with argument "Reza"
+// Note: functions must be declared before they are called (either by defining them before main or by using function prototypes)
+
+// see examople in main function above
+
+// function prototypes: used to declare a function before it is defined
+// Format: ReturnType FunctionName(ParameterType1 parameter1, ParameterType2 parameter2, ...);
+// example in main function above
